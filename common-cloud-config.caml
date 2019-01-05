@@ -1,0 +1,25 @@
+version: 0.2
+provider: gcp                 # Cloud provider
+subscription: amplified-bee-212211   # The gcp project or the azure subscription name
+network: sp2-devnet-devproject      # string type indicating the name of the network
+subnet: sp2-staging-subnet        # string type representing the name of the subnet
+region: us-east1
+clustername: dev-svc
+# The following custom cluster and node tag can have configurable values separated by -
+# The supported values for customclustertag are as follows and maybe
+#   in any order/combination
+#     _CLUSTERNAME_   this would be the clustername that the tool picks up
+#     _REGION_        location where cluster is hosted
+#     _CREATOR_       account that created the cluster
+#     _PROJECT_       project/subscription name where the cluster will be created
+#
+# The supported values for customnodetag are as follows and maybe
+#   in any order/combination
+#     _NODENAME_     the nodepool name - will be picked up by tool from main config file
+#     _CLUSTERNAME_  this would be the clustername that the tool picks up
+#     _REGION_       location where cluster is hosted
+#     _CREATOR_      account that created the cluster
+#     _PROJECT_      project/subscription name where the cluster/nodepool will be created
+customclustertag: _CLUSTERNAME_-_REGION_-_PROJECT_    #optional key denoting format of the cluster tag
+customnodetag: _NODENAME_-_REGION_                    #optional key denoting format of the nodepool tag
+
